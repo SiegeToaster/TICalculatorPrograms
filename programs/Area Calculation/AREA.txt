@@ -1,0 +1,53 @@
+­1→X
+Menu("Select Shape","Rectangle/Square/Parallelogram",A,"Triangle",1,"Trapezoid",E,"Rhombus/Kite",F,"Regular Polygon",G,"Circle",2)
+Lbl 1
+Menu("Select Triangle Type","Triangle",B,"Regular Triangle",C,"Any Triangle",D)
+Lbl 2
+Menu("Circle","Area",H,"Circumference",I)
+Lbl A
+Input "Base: ",B
+Input "Height: ",H
+B*H→X
+Goto Z
+Lbl B
+Input "Base: ",B
+Input "Height: ",H
+(B*H)/2→X
+Goto Z
+Lbl C
+Input "Side: ",S
+(S²*√(3))/4→X
+Goto Z
+Lbl D
+Input "Perimeter/2: ",S
+Input "Side 1: ",A
+Input "Side 2: ",B
+Input "Side 3: ",C
+√(S*((S-A)*(S-B)*(S-C)))→X
+Goto Z
+Lbl E
+Input "Base: ",B
+Input "Height: ",H
+((B+B)*H)/2→X
+Goto Z
+Lbl F
+Input "Diagonal: ",D
+(D*D)/2→X
+Goto Z
+Lbl G
+Disp "Apothem = shortest dist."
+Disp "from center to side (perp)"
+Input "Apothem: ",A
+Input "Perimeter: ",P
+(A*P)/2→X
+Goto Z
+Lbl H
+Input "Radius: ",R
+πR²→X
+Goto Z
+Lbl I
+Input "Radius: ",R
+2πR→X
+Goto Z
+Lbl Z
+Disp "AREA: ",X

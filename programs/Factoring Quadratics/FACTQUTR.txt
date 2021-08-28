@@ -1,0 +1,14 @@
+Input "Add To: ",A
+Input "Multiply To: ",B
+0→T
+1→Z
+If A<0 and B≥0
+­1→Z
+While C+D≠A or C*D≠B
+T+Z→T
+If T=Z*100
+Disp "PRESS ON"
+B/T→C
+T→D
+End
+Disp "THE ANSWER IS:",C,"AND",D

@@ -1,0 +1,32 @@
+Disp "Input 'X' for solve var"
+0→X
+Input "Leg 1: ",A
+Input "Leg 2: ",B
+Input "Hypotenuse: ",C
+If A<0 or B<0 or C<0
+Then
+Disp "ERROR: Negative Distance"
+Stop
+End
+If A=0
+Then
+√(C²-B²)→X
+Goto E
+End
+If B=0
+Then
+√(C²-A²)→X
+Goto E
+End
+If C=0
+Then
+√(A²+B²)→X
+Goto E
+End
+Lbl E
+If X=0
+Then
+Disp "ERROR: No Solve Var"
+Stop
+End
+Disp X

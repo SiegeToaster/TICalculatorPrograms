@@ -1,0 +1,37 @@
+Menu("SELECT SHAPE","PRISM",1,"PYRAMID",2,"CYLINDER",3,"CONE",4,"SPHERE",5)
+Lbl 1
+100→Y
+Goto 10
+Lbl 2
+200→Y
+Goto 10
+Lbl 3
+Input "RADIUS: ",R
+πR²→X
+Goto A
+Lbl 4
+Input "RADIUS: ",R
+πR²→X
+Goto B
+Lbl 5
+Input "RADIUS: ",R
+4πR^3→X
+Goto Z
+Lbl 10
+Menu("PRISM PYRAMID","BASE AREA",A,"OTHER",C
+Lbl A
+Input "HEIGHT: ",H
+XH→X
+Goto Z
+Lbl B
+Input "HEIGHT: ",H
+(XH)/3→X
+Goto Z
+Lbl C
+prgmAREA
+If Y=100
+Goto A
+If Y=200
+Goto B
+Lbl Z
+Disp "THE ANSWER IS:",X

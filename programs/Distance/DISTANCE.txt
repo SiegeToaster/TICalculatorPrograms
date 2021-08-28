@@ -1,0 +1,5 @@
+Input "A: ",A
+Input "B: ",B
+Input "distance from A to B: ",C
+A+C(B-A)→X
+Disp "The answer is",XndUnd
