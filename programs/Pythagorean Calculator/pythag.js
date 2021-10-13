@@ -15,6 +15,7 @@ export default function pythag() {
 
 				switch (true) {
 				case l1 == 'x': {
+					//ToDo: calculate value to be sqrted, them simplify the radical (still in progress) - for all cases
 					displayFraction(Math.sqrt((Math.pow(eval(hyp), 2)) - (Math.pow(eval(l2), 2))));
 					break;
 				}
