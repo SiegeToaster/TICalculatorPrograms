@@ -35,9 +35,18 @@ rl.question('Select Program: ', (programNumber) => {
 		console.log('Work In Progress');
 		break;
 
-	case '5':
-		simrad();
+	case '5': {
+		const rlInner = readline.createInterface({
+			input: process.stdin,
+			output: process.stdout,
+		});
+		rlInner.question('Index (Default 2): ', index => {
+			rlInner.question('Number: ', number => {
+				simrad(index, number);
+			});
+		});
 		break;
+	}
 
 	case '6':
 		console.log('Work In Progress');

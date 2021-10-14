@@ -1,19 +1,4 @@
-import readline from "readline";
-
-export default function simrad() {
-	const rl = readline.createInterface({
-		input: process.stdin,
-		output: process.stdout,
-	});
-
-	rl.question('Index (Default 2): ', index => {
-		rl.question('Number: ', number => {
-			solveSimrad(index, number);
-		});
-	});
-}
-
-export function solveSimrad(index, number) {
+export default function simrad(index, number) {
 	if (!index) index = 2;
 	// console.log(`index: ${index}, number: ${number}`);
 
@@ -36,4 +21,5 @@ export function solveSimrad(index, number) {
 		F += 2;
 	}
 	console.log(`${C} √ ${number}`);
+	return `${C} √ ${number}`;
 }
