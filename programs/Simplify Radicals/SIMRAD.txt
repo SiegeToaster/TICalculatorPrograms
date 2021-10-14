@@ -1,0 +1,15 @@
+Input "Index:",I
+Input "Number: ",N
+1→C
+2→F
+While F≤√(N)
+While fPart(N/F^I)=0
+C*F→C
+N/F^I→N
+End
+If F=2
+1→F
+2+F→F
+End
+Disp ""
+Disp toString(C)+"√"+toString(I)+"("+toString(N)+")"
