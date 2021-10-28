@@ -48,6 +48,21 @@ If you are wondering why this is a node project, I plan on converting all of the
 - If select triangle or circle, select type.
 - Input required information
 
+### Compound Interest
+
+- Choose Fixed or Continually compounded interest
+- Input requested variables
+	- Present (P): Amount of money to calculate interest for
+	- Annual Interest Rate (R): The interest rate in decimal form
+		- 5% is .05
+	- If it is fixed interest, compounds per year (N): how many times it is compounded per year
+		- Annually is 1
+		- Semi-annually is 2
+		- Quarterly is 4
+		- etc
+	- Years Invested (T): How many years to calculate for
+- It will then output the total amount of money according to the formula
+
 ### Distance
 
 - No clue what this does, made it a while ago and just found it.

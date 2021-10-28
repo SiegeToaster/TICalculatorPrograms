@@ -1,0 +1,31 @@
+Menu("TYPE","FIXED",1,"CONTINUALLY",2)
+Lbl 1
+1→Z
+Goto S
+Lbl 2
+2→Z
+Goto S
+Lbl S
+Input "PRESENT (P): ",P
+Disp "Rate in decimal form"
+Input "ANN. INT RATE (R): ",R
+If Z=1
+Input "COMP./YEAR (N): ",N
+Input "YEARS INVESTED (T): ",T
+If R>1
+Then
+Disp "WARNING:"
+Disp "RATE > 0"
+Wait 0.5
+End
+Disp ""
+If S=1
+Then
+P((1+(R/N))^(NT))→A
+Else
+P^(RT)→A
+End
+Disp "AMOUNT EARNED AFTER "+toString(T)
+Disp "YEAR(S):"
+Disp ""
+Disp A
