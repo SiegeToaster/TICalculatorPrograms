@@ -19,12 +19,10 @@ Disp "RATE > 0"
 Wait 0.5
 End
 Disp ""
-If S=1
-Then
-P((1+(R/N))^(NT))→A
-Else
+If Z=1
+P*((1+(R/N))^(N*T))→A
+If Z=2
 P^(RT)→A
-End
 Disp "AMOUNT EARNED AFTER "+toString(T)
 Disp "YEAR(S):"
 Disp ""
