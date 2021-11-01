@@ -3,7 +3,7 @@ Input "Multiply To: ",B
 0→T
 1→Z
 If A<0 and B≥0
-­1→Z
+­-1→Z
 While C+D≠A or C*D≠B
 T+Z→T
 If T=Z*100

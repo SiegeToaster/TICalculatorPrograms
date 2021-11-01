@@ -6,6 +6,7 @@ console.log('0: Area Calculation\n1: Distance\n2: Factoring Quadratics\n3: Pytha
 
 import pythag from './programs/Pythagorean Calculator/pythag.js';
 import simrad from './programs/Simplify Radicals/simrad.js';
+import factqutr from './programs/Factoring Quadratics/factqutr.js';
 
 const rl = readline.createInterface({
 	input: process.stdin,
@@ -24,7 +25,7 @@ rl.question('Select Program: ', (programNumber) => {
 		break;
 
 	case '2':
-		console.log('Work In Progress');
+		factqutr();
 		break;
 
 	case '3':
