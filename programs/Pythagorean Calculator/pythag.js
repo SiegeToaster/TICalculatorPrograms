@@ -15,18 +15,18 @@ export default function pythag() {
 				rl.close();
 
 				switch (true) {
-				case l1 == 'x': {
+				case l1.toLowerCase() === 'x': {
 					simrad(2, Math.pow(eval(hyp), 2) - Math.pow(eval(l2), 2));
 					break;
 				}
 
-				case l2 == 'x': {
+				case l2.toLowerCase === 'x': {
 					simrad(2, Math.pow(eval(hyp), 2) - Math.pow(eval(l1), 2));
 
 					break;
 				}
 
-				case hyp == 'x': {
+				case hyp.toLowerCase === 'x': {
 					simrad(2, Math.pow(eval(l1), 2) + Math.pow(eval(l2), 2));
 					break;
 				}
