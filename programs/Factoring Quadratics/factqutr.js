@@ -20,7 +20,10 @@ export default function factorQuadratic() {
 
 			while (result1 + result2 != addNum || result1 * result2 != multiplyNum) {
 				counter += adder;
-				if (counter === adder*1e2) console.log("PRESS ON");
+				if (counter === adder*1e5) {
+					console.log("No integer answer found.");
+					return process.exit(1)
+				}
 				result1 = multiplyNum / counter;
 				result2 = counter;
 			}
