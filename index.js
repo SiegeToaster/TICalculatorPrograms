@@ -7,6 +7,7 @@ console.log('0: Area Calculation\n1: Distance\n2: Factoring Quadratics\n3: Pytha
 import pythag from './programs/Pythagorean Calculator/pythag.js';
 import simrad from './programs/Simplify Radicals/simrad.js';
 import factqutr from './programs/Factoring Quadratics/factqutr.js';
+import isTriangle from './programs/Triangle/isTriangle.js';
 
 const rl = readline.createInterface({
 	input: process.stdin,
@@ -15,6 +16,12 @@ const rl = readline.createInterface({
 
 rl.question('Select Program: ', (programNumber) => {
 	rl.close();
+
+	const rlInner = readline.createInterface({
+		input: process.stdin,
+		output: process.stdout,
+	});
+
 	switch (programNumber) {
 	case '0':
 		console.log('Work In Progress');
@@ -37,10 +44,6 @@ rl.question('Select Program: ', (programNumber) => {
 		break;
 
 	case '5': {
-		const rlInner = readline.createInterface({
-			input: process.stdin,
-			output: process.stdout,
-		});
 		rlInner.question('Index (Default 2): ', index => {
 			rlInner.question('Number: ', number => {
 				simrad(index, number);
@@ -50,7 +53,16 @@ rl.question('Select Program: ', (programNumber) => {
 	}
 
 	case '6':
-		console.log('Work In Progress');
+		rlInner.question('leg 1: ', l1 => {
+			rlInner.question('leg 2: ', l2 => {
+				rlInner.question('hyp: ', hyp => {
+					l1 = parseFloat(l1);
+					l2 = parseFloat(l2);
+					hyp = parseFloat(hyp);
+					console.log(isTriangle(l1, l2, hyp));
+				});
+			});
+		});
 		break;
 
 	case '7':
