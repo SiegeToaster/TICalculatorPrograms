@@ -8,11 +8,11 @@ export default function quadraticFormula(firstCoef, secondCoef, thirdCoef) {
 		answer1 = ((-secondCoef) + Math.sqrt(Math.pow(secondCoef, 2) + (-4 * firstCoef * thirdCoef))) / 2 * firstCoef;
 		answer2 = ((-secondCoef) - Math.sqrt(Math.pow(secondCoef, 2) + (-4 * firstCoef * thirdCoef))) / 2 * firstCoef;
 		if (answer1 === answer2) return answer1;
-		
+
 		return [answer1, answer2];
 	}
 
-	let answer = {};
+	const answer = {};
 
 	answer.bottom = 2 * firstCoef;
 
@@ -32,7 +32,7 @@ export default function quadraticFormula(firstCoef, secondCoef, thirdCoef) {
 	// simplify lead and sqrt coef
 	answer.leadGcd = gcd(secondCoef, answer.bottom);
 	answer.lead = -secondCoef / answer.leadGcd;
-	answer.leadBottom = answer.bottom / answer.leadGcd
+	answer.leadBottom = answer.bottom / answer.leadGcd;
 	if (answer.leadBottom !== 1) answer.lead = `(${answer.lead} / ${answer.leadBottom})`;
 
 	answer.sqrtCoefGcd = gcd(answer.sqrtCoef, answer.bottom);
@@ -44,16 +44,14 @@ export default function quadraticFormula(firstCoef, secondCoef, thirdCoef) {
 	if (answer.sqrtCoef === 1) {
 		answer.sqrtCoef = '';
 	} else {
-		answer.sqrtCoef = `${answer.sqrtCoef} √ `
+		answer.sqrtCoef = `${answer.sqrtCoef} √ `;
 	}
 	if (answer.sqrtBottom === 1) {
 		answer.sqrt = `${answer.sqrtCoef}${answer.sqrt}`;
+	} else if (answer.sqrtCoef === '') {
+		answer.sqrt = `${answer.sqrtCoef}${answer.sqrt} / ${answer.sqrtBottom}`;
 	} else {
-		if (answer.sqrtCoef === '') {
-			answer.sqrt = `${answer.sqrtCoef}${answer.sqrt} / ${answer.sqrtBottom}`;
-		} else {
-			answer.sqrt = `(${answer.sqrtCoef}${answer.sqrt}) / ${answer.sqrtBottom}`;
-		}
+		answer.sqrt = `(${answer.sqrtCoef}${answer.sqrt}) / ${answer.sqrtBottom}`;
 	}
 
 	answer1 = `${answer.lead} \u00B1 ${answer.sqrt}`;
@@ -61,7 +59,7 @@ export default function quadraticFormula(firstCoef, secondCoef, thirdCoef) {
 }
 
 function gcd(a, b) {
-    if (b === 0) return a
+	if (b === 0) return a;
 
-	return gcd(b, a % b)
+	return gcd(b, a % b);
 }
