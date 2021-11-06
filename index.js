@@ -8,6 +8,7 @@ import pythag from './programs/Pythagorean Calculator/pythag.js';
 import simrad from './programs/Simplify Radicals/simrad.js';
 import factqutr from './programs/Factoring Quadratics/factqutr.js';
 import isTriangle from './programs/Triangle/isTriangle.js';
+import quadraticFormula from './programs/Quadratic Formula/quadraticFormula.js';
 
 const rl = readline.createInterface({
 	input: process.stdin,
@@ -40,12 +41,27 @@ rl.question('Select Program: ', (programNumber) => {
 		break;
 
 	case '4':
-		console.log('Work In Progress');
+		rlInner.question('A: ', firstCoef => {
+			rlInner.question('B: ', secondCoef => {
+				rlInner.question('C: ', thirdCoef => {
+					rlInner.close();
+
+					firstCoef = parseFloat(firstCoef);
+					secondCoef = parseFloat(secondCoef);
+					thirdCoef = parseFloat(thirdCoef);
+
+					console.log(quadraticFormula(firstCoef, secondCoef, thirdCoef));
+
+				})
+			})
+		})
 		break;
 
 	case '5': {
 		rlInner.question('Index (Default 2): ', index => {
 			rlInner.question('Number: ', number => {
+				rlInner.close();
+
 				simrad(index, number);
 			});
 		});
@@ -56,6 +72,8 @@ rl.question('Select Program: ', (programNumber) => {
 		rlInner.question('leg 1: ', l1 => {
 			rlInner.question('leg 2: ', l2 => {
 				rlInner.question('hyp: ', hyp => {
+					rlInner.close();
+
 					l1 = parseFloat(l1);
 					l2 = parseFloat(l2);
 					hyp = parseFloat(hyp);

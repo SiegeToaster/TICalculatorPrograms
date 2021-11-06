@@ -1,9 +1,10 @@
-export default function simrad(index, number) {
+export default function simrad(index, number, printAnswer) {
+	if (printAnswer == null) printAnswer = true;
 	if (!index) index = 2;
 	// console.log(`index: ${index}, number: ${number}`);
 
 	if ((parseInt(Math.pow(number, 1 / index))) == (Math.pow(number, 1 / index))) {
-		console.log(Math.pow(number, 1 / index));
+		if (printAnswer) console.log(Math.pow(number, 1 / index), '>:(');
 		return Math.pow(number, 1 / index);
 	}
 
@@ -20,6 +21,6 @@ export default function simrad(index, number) {
 		}
 		F += 2;
 	}
-	console.log(`${C} √ ${number}`);
+	if (printAnswer) console.log(`${C} √ ${number}`);
 	return `${C} √ ${number}`;
 }

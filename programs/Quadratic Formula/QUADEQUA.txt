@@ -3,6 +3,6 @@ A→X
 A/X→A
 B/X→B
 C/X→C
-((­B+√((B²)-(4AC)))2A)→X
-((­B-√((B²)-(4AC)))2A)→Y
+((­B+√((B²)-(4AC)))/2A)→X
+((­B-√((B²)-(4AC)))/2A)→Y
 Disp XndUnd,YndUnd
